@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @departamento.name %>
+</p>
+
+<p>
+  <b>Provincia:</b>
+  <%= @departamento.pname %>
+</p>
+
+<%= link_to 'Edit', edit_departamento_path(@departamento) %> |
+<%= link_to 'Back', departamentos_path %>
+
+<br>
+<b>Localidades de este depatamento</b>
+<table>
+  <tr>
+    <th>Localidad</th>
+
+  <% @departamento.localidads.each do |localidad|%>
+    <tr>
+      <td>
+        <%= link_to localidad.name, localidad %>
+      </td>
+    </tr>  
+  <% end %>
+  
+</table>

@@ -1,0 +1,41 @@
+<%= form_for @search do |f| %>
+
+  <%= f.label :provincia %><br />
+  <%= f.text_field :departamento_provincia_name_contains %><br />
+  
+  <%= f.label :departamento %><br />
+  <%= f.text_field :departamento_name_contains %><br />
+  
+  <%= f.label :localidad %><br />
+  <%= f.text_field :name_contains %><br />
+  <%= f.submit('Buscar') %>
+<% end %>
+
+<h1>Localidades</h1>
+
+<%= will_paginate @localidads %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Departamneto</th>
+    <th>Provincia</th>    
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @localidads.each do |localidad| %>
+  <tr>
+    <td><%= link_to localidad.name,localidad %></td>
+    <td><%= link_to localidad.dname,localidad.d %></td>    
+    <td><%= link_to localidad.pname,localidad.p %></td>
+    <td><%= link_to 'Edit', edit_localidad_path(localidad) %></td>
+    <td><%= link_to 'Destroy', localidad, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Localidad', new_localidad_path %>

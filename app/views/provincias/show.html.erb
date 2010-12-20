@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @provincia.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_provincia_path(@provincia) %> |
+<%= link_to 'Back', provincias_path %>
+
+<br>
+<b>Departamentos de esta Provincia</b>
+<table>
+  <tr>
+    <th>Localidad</th>
+
+  <% @provincia.departamentos.each do |departamento|%>
+    <tr>
+      <td>
+        <%= link_to departamento.name, departamento %>
+      </td>
+    </tr>  
+  <% end %>
+  
+</table>
