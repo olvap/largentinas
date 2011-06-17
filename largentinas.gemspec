@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{largentinas}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Oldani Pablo"]
@@ -47,7 +47,6 @@ Gem::Specification.new do |s|
     "app/views/provincias/index.html.erb",
     "app/views/provincias/new.html.erb",
     "app/views/provincias/show.html.erb",
-    "config/routes.rb",
     "lib/generators/largentinas/largentinas_generator.rb",
     "lib/generators/largentinas/templates/db/migrate/create_departamentos.rb",
     "lib/generators/largentinas/templates/db/migrate/create_localidads.rb",
